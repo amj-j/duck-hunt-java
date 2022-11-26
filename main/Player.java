@@ -7,6 +7,10 @@ public class Player {
     private int lives;
     private ActionCard[] cards;
 
+    public Player(String name) {
+        this.name = name;
+        lives = 5;
+    }
 
     public int getLives() {
         return lives;

@@ -1,5 +1,11 @@
 package pond.pond_cards;
 
-public class Duck extends PondCard {
+import main.Player;
 
+public class Duck extends PondCard {
+    Player owner;
+
+    public Duck(Player owner) {
+        this.owner = owner;
+    }
 }
