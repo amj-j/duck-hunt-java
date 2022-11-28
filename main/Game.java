@@ -6,12 +6,14 @@ import action.ActionDeck;
 import action.ActionCard;
 import pond.PondDeck;
 import pond.Pond;
+import pond.AimTiles;
 
 public class Game {
     private ArrayList<Player> players;
     private ActionDeck actionDeck;
     private PondDeck pondDeck;
     private Pond pond;
+    private AimTiles aimTiles;
 
     public Game() {
         int playersNum = KeyboardInput.readInt("How many players will there be?");
@@ -22,6 +24,8 @@ public class Game {
         initPlayers(playersNum);
 
         pondDeck = new PondDeck(players);
+        pond = new Pond();
+        aimTiles = new AimTiles();
         pondDeck.shuffle();
         pondDeck.fillPond(pond);
 
