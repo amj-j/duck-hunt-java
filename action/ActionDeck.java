@@ -10,13 +10,13 @@ import action.action_cards.Scatter;
 import action.action_cards.DuckDance;
 
 public class ActionDeck {
-    private int AIM_NUM = 10;
-    private int SHOOT_NUM = 12;
-    private int WILD_BILL_NUM = 2;
-    private int DUCK_MARCH_NUM = 6;
-    private int TURBO_DUCK_NUM = 1;
-    private int SCATTER_NUM = 2;
-    private int DUCK_DANCE_NUM = 1;
+    private final int AIM_NUM = 10;
+    private final int SHOOT_NUM = 12;
+    private final int WILD_BILL_NUM = 2;
+    private final int DUCK_MARCH_NUM = 6;
+    private final int TURBO_DUCK_NUM = 1;
+    private final int SCATTER_NUM = 2;
+    private final int DUCK_DANCE_NUM = 1;
 
     private ArrayList<ActionCard> deck;
 
@@ -69,5 +69,9 @@ public class ActionDeck {
 
     public void addToBottom(ActionCard newLast) {
         deck.add(newLast);
+    }
+
+    public void shuffle() {
+
     }
 }

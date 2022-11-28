@@ -6,8 +6,6 @@ import action.ActionDeck;
 import action.ActionCard;
 import pond.PondDeck;
 import pond.Pond;
-import pond.pond_cards.Duck;
-import pond.pond_cards.Water;
 
 public class Game {
     private ArrayList<Player> players;
@@ -20,9 +18,15 @@ public class Game {
         while (!checkPlayersNum(playersNum)) {
             playersNum = KeyboardInput.readInt("Enter valid number of players");
         }
+        
         initPlayers(playersNum);
-        initPondCards();
+
+        pondDeck = new PondDeck(players);
+        pondDeck.shuffle();
+        pondDeck.fillPond(pond);
+
         actionDeck = new ActionDeck();
+        actionDeck.shuffle();
         dealCards();
     }
 
@@ -44,20 +48,8 @@ public class Game {
 
     }
 
-    private void initPondCards() {
-        pondDeck = new PondDeck();
-        for (Player player : this.players) {
-            for (int i = 0; i < 5; i++) {
-                pondDeck.add(new Duck(player));
-            }
-            pondDeck.add(new Water());
-        }
-        pondDeck.shuffle();
-        pondDeck.fillPond(pond);
-    }
-
     private void dealCards() {
-    ActionCard card;
+        ActionCard card;
         for (Player player : players) {
             for (int i = 0; i < 3; i++) {
                 card = actionDeck.takeFromTop();

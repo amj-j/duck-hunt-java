@@ -1,13 +1,22 @@
 package pond;
 
 import java.util.ArrayList;
+import main.Player;
 import pond.pond_cards.PondCard;
+import pond.pond_cards.Duck;
+import pond.pond_cards.Water;
 
 public class PondDeck {
     ArrayList<PondCard> deck;
     
-    public void add(PondCard card) {
-        deck.add(card);
+    public PondDeck(ArrayList<Player> players) {
+        deck = new ArrayList<PondCard>();
+        for (Player player : players) {
+            for (int i = 0; i < 5; i++) {
+                deck.add(new Duck(player));
+            }
+            deck.add(new Water());
+        }
     }
 
     public PondCard takeFromTop() {
