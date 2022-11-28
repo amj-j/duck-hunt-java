@@ -1,5 +1,7 @@
 package action.action_cards;
 
-public class WildBill {
+import action.ActionCard;
+
+public class WildBill extends ActionCard {
     
 }

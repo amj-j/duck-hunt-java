@@ -10,6 +10,7 @@ public class Player {
     public Player(String name) {
         this.name = name;
         lives = 5;
+        cards = new ActionCard[3];
     }
 
     public int getLives() {
@@ -26,6 +27,10 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public void addCard(ActionCard card, int index) {
+        cards[index] = card;
     }
 
     public boolean playCard(int cardNum, ActionDeck deck) {

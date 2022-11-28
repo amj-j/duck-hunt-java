@@ -3,6 +3,7 @@ package main;
 import java.util.ArrayList;
 import utils.KeyboardInput;
 import action.ActionDeck;
+import action.ActionCard;
 import pond.PondDeck;
 import pond.Pond;
 import pond.pond_cards.Duck;
@@ -21,7 +22,8 @@ public class Game {
         }
         initPlayers(playersNum);
         initPondCards();
-        initActionCards();
+        actionDeck = new ActionDeck();
+        dealCards();
     }
 
     private boolean checkPlayersNum(int playersNum) {
@@ -43,6 +45,7 @@ public class Game {
     }
 
     private void initPondCards() {
+        pondDeck = new PondDeck();
         for (Player player : this.players) {
             for (int i = 0; i < 5; i++) {
                 pondDeck.add(new Duck(player));
@@ -53,7 +56,13 @@ public class Game {
         pondDeck.fillPond(pond);
     }
 
-    private void initActionCards() {
-        
+    private void dealCards() {
+    ActionCard card;
+        for (Player player : players) {
+            for (int i = 0; i < 3; i++) {
+                card = actionDeck.takeFromTop();
+                player.addCard(card, i);
+            }
+        }
     }
 } 

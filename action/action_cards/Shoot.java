@@ -1,5 +1,7 @@
 package action.action_cards;
 
-public class Shoot {
+import action.ActionCard;
+
+public class Shoot extends ActionCard {
     
 }

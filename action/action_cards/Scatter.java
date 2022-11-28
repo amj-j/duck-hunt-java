@@ -1,5 +1,7 @@
 package action.action_cards;
 
-public class Scatter {
+import action.ActionCard;
+
+public class Scatter extends ActionCard {
     
 }

@@ -1,5 +1,7 @@
 package action.action_cards;
 
-public class TurboDuck {
+import action.ActionCard;
+
+public class TurboDuck extends ActionCard {
     
 }

@@ -1,5 +1,7 @@
 package action.action_cards;
 
-public class DuckDance {
+import action.ActionCard;
+
+public class DuckDance extends ActionCard {
     
 }
