@@ -1,6 +1,7 @@
 package pond;
 
 import java.util.ArrayList;
+import java.util.Random;
 import main.Player;
 import pond.pond_cards.PondCard;
 import pond.pond_cards.Duck;
@@ -30,7 +31,13 @@ public class PondDeck {
     }
 
     public void shuffle() {
-
+        Random rand = new Random();
+        PondCard tmp;
+        for (int i = 0; i < deck.size(); i++) {
+            tmp = deck.get(i);
+            deck.remove(i);
+            deck.add(rand.nextInt(deck.size()), tmp);
+        }
     }
 
     public void fillPond(Pond pond) {

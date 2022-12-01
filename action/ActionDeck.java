@@ -1,6 +1,7 @@
 package action;
 
 import java.util.ArrayList;
+import java.util.Random;
 import action.action_cards.Aim;
 import action.action_cards.Shoot;
 import action.action_cards.WildBill;
@@ -72,6 +73,12 @@ public class ActionDeck {
     }
 
     public void shuffle() {
-
+        Random rand = new Random();
+        ActionCard tmp;
+        for (int i = 0; i < deck.size(); i++) {
+            tmp = deck.get(i);
+            deck.remove(i);
+            deck.add(rand.nextInt(deck.size()), tmp);
+        }
     }
 }
