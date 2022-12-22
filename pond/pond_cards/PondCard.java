@@ -1,5 +1,7 @@
 package pond.pond_cards;
 
-abstract public class PondCard {
+import main.Card;
+
+abstract public class PondCard extends Card {
     //abstract public String print();
 }

@@ -61,24 +61,4 @@ public class ActionDeck {
             deck.add(duckDance);
         }
     }
-
-    public ActionCard takeFromTop() {
-        ActionCard rtrn = deck.get(0);
-        deck.remove(0);
-        return rtrn;
-    }
-
-    public void addToBottom(ActionCard newLast) {
-        deck.add(newLast);
-    }
-
-    public void shuffle() {
-        Random rand = new Random();
-        ActionCard tmp;
-        for (int i = 0; i < deck.size(); i++) {
-            tmp = deck.get(i);
-            deck.remove(i);
-            deck.add(rand.nextInt(deck.size()), tmp);
-        }
-    }
 }

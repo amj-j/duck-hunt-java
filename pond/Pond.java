@@ -2,12 +2,12 @@ package pond;
 
 import java.util.ArrayList;
 import pond.pond_cards.PondCard;
+import main.Deck;
 
-public class Pond {
-    private ArrayList<PondCard> pondTiles;
+public class Pond extends Deck{
 
     public Pond() {
-        pondTiles = new ArrayList<PondCard>();
+        
     } 
 
     

@@ -1,11 +1,11 @@
 package pond;
 
-public class AimTiles {
-    private boolean[] tiles;
+import utils.Constants;
 
-    public AimTiles() {
-        tiles = new boolean[6];
-    }
+public class AimTiles {
+    private boolean[] tiles = new boolean[Constants.POND_SIZE];;
+
+    public AimTiles() {}
 
     public boolean isAimed(int index) {
         return tiles[index];

@@ -1,16 +1,16 @@
 package main;
+
 import action.ActionCard;
 import action.ActionDeck;
+import utils.Constants;
 
 public class Player {
     private String name;
-    private int lives;
-    private ActionCard[] cards;
+    private int lives = Constants.LIVES_NUM;
+    private ActionCard[] cards = new ActionCard[Constants.CARDS_ON_HAND];
 
     public Player(String name) {
         this.name = name;
-        lives = 5;
-        cards = new ActionCard[3];
     }
 
     public int getLives() {
@@ -21,20 +21,16 @@ public class Player {
         lives--;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void addCard(ActionCard card, int index) {
+    /*public void addCard(ActionCard card, int index) {
         cards[index] = card;
     }
 
     public boolean playCard(int cardNum, ActionDeck deck) {
-        if (cardNum > 2 || cardNum < 0) {
+        if (cardNum >= Constants.CARDS_ON_HAND || cardNum < 0) {
             return false;
         }
         else {
@@ -45,6 +41,6 @@ public class Player {
             cards[cardNum] = card;
             return true;
         }
-    }
+    }*/
 
 }
