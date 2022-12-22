@@ -1,15 +1,13 @@
 package main;
 
 import java.util.ArrayList;
+
+import action_cards.*;
 import utils.KeyboardInput;
 import utils.Constants;
-import action.ActionDeck;
-import action.ActionCard;
-import pond.PondDeck;
-import pond.Pond;
-import pond.AimTiles;
-import pond.pond_cards.Duck;
-import pond.pond_cards.Water;
+
+import pond.*;
+import pond.pond_cards.*;
 
 public class Game {
     private ArrayList<Player> players = new ArrayList<Player>();
@@ -26,15 +24,9 @@ public class Game {
         
         initPlayers(playersNum);
         initPondDeck();
-        //initPond();
-        //initActionDeck();
-
-
-        /*pondDeck.fillPond(pond);
-
-        actionDeck = new ActionDeck();
-        actionDeck.shuffle();
-        dealCards();*/
+        initPond();
+        initActionDeck();
+        dealCards();
     }
 
     private boolean checkPlayersNum(int playersNum) {
@@ -56,30 +48,37 @@ public class Game {
     }
 
     private void initPondDeck() {
-        Duck duck;
         for (Player player : players) {
-            duck = new Duck(player);
-            pondDeck.addTypeOfCards(duck, players.size());
+            pondDeck.addTypeOfCards(new Duck(player), Constants.START_LIVES);
         }
-        Water water = new Water();
-        pondDeck.addTypeOfCards(water, Constants.WATER_NUM);
+        pondDeck.addTypeOfCards(new Water(), Constants.WATER);
 
         pondDeck.shuffle();
     }
 
     private void initPond() {
-
+        Card card;
+        for (int i = 0; i < Constants.POND_SIZE; i++) {
+            card = pondDeck.takeFromTop();
+            pond.addToBottom(card); 
+        }
     }
 
     private void initActionDeck() {
-
+        actionDeck.addTypeOfCards(new Aim(), Constants.AIM);
+        actionDeck.addTypeOfCards(new DuckDance(), Constants.DUCK_DANCE);
+        actionDeck.addTypeOfCards(new DuckMarch(), Constants.DUCK_MARCH);
+        actionDeck.addTypeOfCards(new Scatter(), Constants.SCATTER);
+        actionDeck.addTypeOfCards(new Shoot(), Constants.SHOOT);
+        actionDeck.addTypeOfCards(new TurboDuck(), Constants.TURBO_DUCK);
+        actionDeck.addTypeOfCards(new WildBill(), Constants.WILD_BILL);
     }
 
     private void dealCards() {
         ActionCard card;
         for (Player player : players) {
-            for (int i = 0; i < 3; i++) {
-                card = actionDeck.takeFromTop();
+            for (int i = 0; i < Constants.CARDS_ON_HAND; i++) {
+                card = (ActionCard)actionDeck.takeFromTop();
                 player.addCard(card, i);
             }
         }

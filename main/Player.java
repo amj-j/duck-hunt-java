@@ -1,12 +1,11 @@
 package main;
 
-import action.ActionCard;
-import action.ActionDeck;
+import action_cards.ActionCard;
 import utils.Constants;
 
 public class Player {
     private String name;
-    private int lives = Constants.LIVES_NUM;
+    private int lives = Constants.START_LIVES;
     private ActionCard[] cards = new ActionCard[Constants.CARDS_ON_HAND];
 
     public Player(String name) {
@@ -25,11 +24,11 @@ public class Player {
         return name;
     }
 
-    /*public void addCard(ActionCard card, int index) {
+    public void addCard(ActionCard card, int index) {
         cards[index] = card;
     }
 
-    public boolean playCard(int cardNum, ActionDeck deck) {
+    public boolean playCard(int cardNum, Deck deck) {
         if (cardNum >= Constants.CARDS_ON_HAND || cardNum < 0) {
             return false;
         }
@@ -37,10 +36,10 @@ public class Player {
             ActionCard card = cards[cardNum];
             card.play();
             deck.addToBottom(card);
-            card = deck.takeFromTop();
+            card = (ActionCard)deck.takeFromTop();
             cards[cardNum] = card;
             return true;
         }
-    }*/
+    }
 
 }
