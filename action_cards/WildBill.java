@@ -12,6 +12,7 @@ public class WildBill extends ActionCard {
 
     @Override
     public void play() {
+        IOmanager.print("You chose Wild Bill");
         int index = IOmanager.printAndReadInt("What tile do you shoot at?");
         while (index < 0 || index >= Constants.POND_SIZE) {
             index = IOmanager.printAndReadInt("Enter valid number");

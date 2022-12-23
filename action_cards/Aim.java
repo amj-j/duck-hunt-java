@@ -12,6 +12,7 @@ public class Aim extends ActionCard {
 
     @Override
     public void play() {
+        IOmanager.print("You chose Aim");
         int index = IOmanager.printAndReadInt("What tile do you aim at?");
         while (index < 0 || index >= Constants.POND_SIZE) {
             index = IOmanager.printAndReadInt("Enter valid number");

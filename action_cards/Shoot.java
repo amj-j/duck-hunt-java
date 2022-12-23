@@ -12,6 +12,7 @@ public class Shoot extends ActionCard {
 
     @Override
     public void play() {
+        IOmanager.print("You chose Shoot");
         int index = IOmanager.printAndReadInt("What tile do you shoot at?");
         while (index < 0 || index >= Constants.POND_SIZE) {
             index = IOmanager.printAndReadInt("Enter valid number");
