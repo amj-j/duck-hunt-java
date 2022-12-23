@@ -20,10 +20,8 @@ public class Pond extends Deck{
         deck.add(0, card);
     }
 
-    public PondCard popCard(int index) {
-        PondCard card = getCard(index);
-        deck.remove(card);
-        return card;
+    public void removeCard(int index) {
+        deck.remove(index);
     }
   
 
