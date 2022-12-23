@@ -1,7 +1,6 @@
 package action_cards;
 
 import utils.IOmanager;
-import utils.Constants;
 import main.Board;
 
 public class Aim extends ActionCard {
@@ -13,10 +12,7 @@ public class Aim extends ActionCard {
     @Override
     public void play() {
         IOmanager.print("You chose Aim");
-        int index = IOmanager.printAndReadInt("What tile do you aim at?");
-        while (index < 0 || index >= Constants.POND_SIZE) {
-            index = IOmanager.printAndReadInt("Enter valid number");
-        }
+        int index = getPondIndex("What tile do you aim at?");   
         board.aimTiles.aimAt(index);
     }
 }

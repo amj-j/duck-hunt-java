@@ -1,8 +1,8 @@
 package action_cards;
 
 import main.Board;
-import utils.Constants;
 import utils.IOmanager;
+import pond.pond_cards.PondCard;
 
 public class WildBill extends ActionCard {
 
@@ -13,10 +13,8 @@ public class WildBill extends ActionCard {
     @Override
     public void play() {
         IOmanager.print("You chose Wild Bill");
-        int index = IOmanager.printAndReadInt("What tile do you shoot at?");
-        while (index < 0 || index >= Constants.POND_SIZE) {
-            index = IOmanager.printAndReadInt("Enter valid number");
-        }
-        board.pond.shootAt(index);
+        int index = getPondIndex("What tile do you shoot at?");       
+        PondCard card = board.pond.getCard(index);
+        card.shot();
     }
 }

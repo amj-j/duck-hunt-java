@@ -1,8 +1,8 @@
 package action_cards;
 
 import main.Board;
-import utils.Constants;
 import utils.IOmanager;
+import pond.pond_cards.PondCard;
 
 public class Shoot extends ActionCard {
 
@@ -13,12 +13,10 @@ public class Shoot extends ActionCard {
     @Override
     public void play() {
         IOmanager.print("You chose Shoot");
-        int index = IOmanager.printAndReadInt("What tile do you shoot at?");
-        while (index < 0 || index >= Constants.POND_SIZE) {
-            index = IOmanager.printAndReadInt("Enter valid number");
-        }
+        int index = getPondIndex("What tile do you shoot at?");   
         if (board.aimTiles.isAimed(index)) {
-            board.pond.shootAt(index);
+            PondCard card = board.pond.getCard(index);
+            card.shot();
         }
         else {
             IOmanager.print("This tile is not aimed!");
