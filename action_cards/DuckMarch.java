@@ -1,6 +1,8 @@
 package action_cards;
 
+import utils.IOmanager;
 import main.Board;
+import pond.pond_cards.PondCard;
 
 public class DuckMarch extends ActionCard {
 
@@ -10,6 +12,10 @@ public class DuckMarch extends ActionCard {
 
     @Override
     public void play() {
-        
+        IOmanager.print("You chose Duck March");
+        PondCard card = board.pond.takeFromTop();
+        board.pondDeck.addToBottom(card);
+        card = (PondCard) board.pondDeck.takeFromTop();
+        board.pond.addToBottom(card);
     }
 }
