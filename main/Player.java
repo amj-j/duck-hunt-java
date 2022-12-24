@@ -3,6 +3,7 @@ package main;
 import action_cards.ActionCard;
 import utils.Constants;
 import utils.IOmanager;
+import action_cards.Shoot;
 
 public class Player {
     private String name;

@@ -17,10 +17,12 @@ public class Game {
 
         while (true) {
             round();
-            if (board.players.size() == 0) {
+            if (board.players.size() == 1) {
                 break;
             }
         }
+        board.lostPlayers.add(board.players.get(0).getName());
+        printLostPlayers();
     }
     
     private void round() {
@@ -46,9 +48,18 @@ public class Game {
 
     private void printRound(Player player) {
         board.printBoard();
+        IOmanager.println("");
         IOmanager.println(player.getName() + "'s turn:");
         player.printHand();
-        IOmanager.println("\n");
+        IOmanager.println("");
+    }
+
+    private void printLostPlayers() {
+        int place = 1;
+        for (int i = board.lostPlayers.size() -1; i >= 0; i--) {
+            IOmanager.println(place + ". " + board.lostPlayers.get(i));
+            place++;
+        }
     }
 } 
 

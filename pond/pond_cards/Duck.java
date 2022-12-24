@@ -21,6 +21,7 @@ public class Duck extends PondCard {
         owner.takeLife();
         IOmanager.println("You shot " + owner.getName() + "'s duck");
         if (owner.getLives() == 0) {
+            IOmanager.println(owner.getName() + " lost");
             board.lostPlayers.add(owner.getName());
             board.removedPlayerIndex = board.players.indexOf(owner);
             board.players.remove(owner);

@@ -29,7 +29,7 @@ public class Board {
     private void initPlayers(int playersNum) {
         String name;
         for (int i = 0; i < playersNum; i++) {
-            name = IOmanager.printAndReadString("Enter the name of player" + (i+1));
+            name = IOmanager.printAndReadString("Enter the name of player " + (i+1));
             players.add(new Player(name, this));
         }
 
@@ -60,6 +60,7 @@ public class Board {
         actionDeck.addTypeOfCards(new Shoot(this), Constants.SHOOT);
         actionDeck.addTypeOfCards(new TurboDuck(this), Constants.TURBO_DUCK);
         actionDeck.addTypeOfCards(new WildBill(this), Constants.WILD_BILL);
+        actionDeck.shuffle();
     }
 
     private void dealCards() {
@@ -83,7 +84,8 @@ public class Board {
         IOmanager.println("\nBoard:");
         for (int i = 0; i < Constants.POND_SIZE; i++) {           
             IOmanager.print((i+1) + ". " + pond.getCard(i).printCard());
-            if (aimTiles.isAimed(i)) { IOmanager.println(" AIMED"); }
+            if (aimTiles.isAimed(i)) { IOmanager.print(" AIMED"); }
+            IOmanager.println("");
         }
     }
 }
