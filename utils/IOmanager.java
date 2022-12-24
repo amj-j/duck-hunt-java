@@ -17,4 +17,13 @@ public abstract class IOmanager {
     public static String printAndReadString(String text) {
         return KeyboardInput.readString(text);
     }
+
+    public static int readIntInRange(int from, int to, String primaryText, String correctionText) {
+        int index = printAndReadInt(primaryText);
+        while (index < from || index >= to) {
+            index = printAndReadInt(correctionText);
+        }
+        return index;
+    }
+
 }

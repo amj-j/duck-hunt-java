@@ -11,10 +11,10 @@ abstract public class ActionCard extends Card {
     public void play() {}
 
     protected int getPondIndex(String text) {
-        int index = IOmanager.printAndReadInt(text) - 1;
-        while (index < 0 || index >= Constants.POND_SIZE) {
-            index = IOmanager.printAndReadInt("Enter valid number") - 1;
-        }
-        return index;
+        return IOmanager.readIntInRange(
+            1, Constants.POND_SIZE+1, 
+            text, 
+            "Enter valid number"
+        ) - 1;
     }
 }

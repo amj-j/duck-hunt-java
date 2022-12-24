@@ -15,6 +15,7 @@ public class Board {
     public Deck pondDeck = new Deck();
     public Pond pond = new Pond();
     public AimTiles aimTiles = new AimTiles();
+    public ArrayList<String> lostPlayers = new ArrayList<String>();
 
     public Board(int playersNum) {
         initPlayers(playersNum);
