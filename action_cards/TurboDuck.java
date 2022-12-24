@@ -13,7 +13,7 @@ public class TurboDuck extends ActionCard {
 
     @Override
     public void play() {
-        IOmanager.print("You chose Turbo Duck");
+        IOmanager.println("You chose Turbo Duck");
         int index = getPondIndex("What tile is the duck you want to move on?");
         PondCard card = board.pond.getCard(index);
         if (card instanceof Duck) {
@@ -21,7 +21,7 @@ public class TurboDuck extends ActionCard {
             board.pond.addToTop(card);
         }
         else {
-            IOmanager.print("You can't move water!");
+            IOmanager.println("You can't move water!");
             play();
         }
     }

@@ -12,7 +12,7 @@ public class DuckMarch extends ActionCard {
 
     @Override
     public void play() {
-        IOmanager.print("You chose Duck March");
+        IOmanager.println("You chose Duck March");
         PondCard card = board.pond.takeFromTop();
         board.pondDeck.addToBottom(card);
         card = (PondCard) board.pondDeck.takeFromTop();

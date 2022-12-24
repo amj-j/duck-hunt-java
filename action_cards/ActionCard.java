@@ -12,8 +12,10 @@ public class ActionCard extends Card {
 
     protected int getPondIndex(String text) {
         int index = IOmanager.printAndReadInt(text);
+        --index;
         while (index < 0 || index >= Constants.POND_SIZE) {
             index = IOmanager.printAndReadInt("Enter valid number");
+            --index;
         }
         return index;
     }

@@ -23,6 +23,4 @@ public class Pond extends Deck{
     public void removeCard(int index) {
         deck.remove(index);
     }
-  
-
 }

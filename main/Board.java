@@ -69,4 +69,19 @@ public class Board {
             }
         }
     }
+
+    public void printBoard() {
+        IOmanager.println("\n\n--------------------------------------------------------------------------\n");
+
+        IOmanager.println("Player lives:");
+        for (Player player : players) {
+            IOmanager.println(player.getName() + " - " + player.getLives() + " lives");
+        }
+
+        IOmanager.println("\nBoard:");
+        for (int i = 0; i < Constants.POND_SIZE; i++) {           
+            IOmanager.print((i+1) + ". " + pond.getCard(i).printCard());
+            if (aimTiles.isAimed(i)) { IOmanager.println(" AIMED"); }
+        }
+    }
 }

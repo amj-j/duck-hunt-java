@@ -12,14 +12,14 @@ public class Shoot extends ActionCard {
 
     @Override
     public void play() {
-        IOmanager.print("You chose Shoot");
+        IOmanager.println("You chose Shoot");
         int index = getPondIndex("What tile do you shoot at?");   
         if (board.aimTiles.isAimed(index)) {
             PondCard card = board.pond.getCard(index);
             card.shot();
         }
         else {
-            IOmanager.print("This tile is not aimed!");
+            IOmanager.println("This tile is not aimed!");
             play();
         }
     }

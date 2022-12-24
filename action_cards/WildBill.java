@@ -12,7 +12,7 @@ public class WildBill extends ActionCard {
 
     @Override
     public void play() {
-        IOmanager.print("You chose Wild Bill");
+        IOmanager.println("You chose Wild Bill");
         int index = getPondIndex("What tile do you shoot at?");       
         PondCard card = board.pond.getCard(index);
         card.shot();

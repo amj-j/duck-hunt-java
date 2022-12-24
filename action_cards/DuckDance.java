@@ -13,7 +13,7 @@ public class DuckDance extends ActionCard {
 
     @Override
     public void play() {
-        IOmanager.print("You chose Scatter");
+        IOmanager.println("You chose Scatter");
         PondCard card;
         for (int i = 0; i < Constants.POND_SIZE; i++) {
             card = board.pond.takeFromTop();

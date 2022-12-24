@@ -4,15 +4,24 @@ import utils.IOmanager;
 import main.Player;
 
 public class Duck extends PondCard {
-    Player owner;
+    private Player owner;
 
     public Duck(Player owner) {
         this.owner = owner;
     }
 
+    public Player getOwner() {
+        return owner;
+    }
+
     @Override
     public void shot() {
         owner.takeLife();
-        IOmanager.print("You shot " + owner.getName() + "'s duck");
+        IOmanager.println("You shot " + owner.getName() + "'s duck");
+    }
+
+    @Override
+    public String printCard() {
+        return owner.getName() + "'s duck";
     }
 }
