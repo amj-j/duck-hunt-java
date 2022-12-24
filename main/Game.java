@@ -35,8 +35,12 @@ public class Game {
                 "Enter valid number"
             ) - 1;
             player.playCard(cardNum);
-
-            
+            if (board.removedPlayerIndex >= 0) {
+                if (board.removedPlayerIndex <= i) {
+                    --i;
+                }
+                board.removedPlayerIndex = -1;
+            }
         }
     }
 
