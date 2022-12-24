@@ -14,4 +14,9 @@ public class Scatter extends ActionCard {
         IOmanager.println("You chose Scatter");
         board.pond.shuffle();
     }
+
+    @Override
+    public String printCard() {
+        return "Scatter";
+    }
 }

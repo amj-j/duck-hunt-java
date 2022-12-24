@@ -18,4 +18,9 @@ public class DuckMarch extends ActionCard {
         card = (PondCard) board.pondDeck.takeFromTop();
         board.pond.addToBottom(card);
     }
+
+    @Override
+    public String printCard() {
+        return "Duck March";
+    }
 }

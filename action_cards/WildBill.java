@@ -17,4 +17,9 @@ public class WildBill extends ActionCard {
         PondCard card = board.pond.getCard(index);
         card.shot();
     }
+
+    @Override
+    public String printCard() {
+        return "Wild Bill";
+    }
 }

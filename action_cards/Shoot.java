@@ -23,4 +23,9 @@ public class Shoot extends ActionCard {
             play();
         }
     }
+
+    @Override
+    public String printCard() {
+        return "Shoot";
+    }
 }

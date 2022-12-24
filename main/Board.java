@@ -28,7 +28,7 @@ public class Board {
         String name;
         for (int i = 0; i < playersNum; i++) {
             name = IOmanager.printAndReadString("Enter the name of player" + (i+1));
-            players.add(new Player(name));
+            players.add(new Player(name, this));
         }
 
     }

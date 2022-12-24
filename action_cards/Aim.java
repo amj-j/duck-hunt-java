@@ -15,4 +15,9 @@ public class Aim extends ActionCard {
         int index = getPondIndex("What tile do you aim at?");   
         board.aimTiles.aimAt(index);
     }
+
+    @Override
+    public String printCard() {
+        return "Aim";
+    }
 }

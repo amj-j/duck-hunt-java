@@ -25,4 +25,9 @@ public class TurboDuck extends ActionCard {
             play();
         }
     }
+
+    @Override
+    public String printCard() {
+        return "Turbo Duck";
+    }
 }

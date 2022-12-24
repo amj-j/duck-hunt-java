@@ -5,17 +5,15 @@ import utils.Constants;
 import main.Card;
 import main.Board;
 
-public class ActionCard extends Card {
+abstract public class ActionCard extends Card {
     protected Board board;
 
     public void play() {}
 
     protected int getPondIndex(String text) {
-        int index = IOmanager.printAndReadInt(text);
-        --index;
+        int index = IOmanager.printAndReadInt(text) - 1;
         while (index < 0 || index >= Constants.POND_SIZE) {
-            index = IOmanager.printAndReadInt("Enter valid number");
-            --index;
+            index = IOmanager.printAndReadInt("Enter valid number") - 1;
         }
         return index;
     }

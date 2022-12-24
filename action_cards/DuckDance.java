@@ -25,4 +25,9 @@ public class DuckDance extends ActionCard {
             board.pond.addToTop(card);
         }
     }
+
+    @Override
+    public String printCard() {
+        return "Duck Dance";
+    }
 }
