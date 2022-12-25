@@ -14,7 +14,10 @@ public class Game {
             "Enter valid number of players"
         );
         board = new Board(playersNum);
+        mainCycle();
+    }
 
+    private void mainCycle() {
         while (true) {
             round();
             if (board.players.size() == 1) {
@@ -37,13 +40,30 @@ public class Game {
                 "Enter valid number"
             ) - 1;
             player.playCard(cardNum);
-            if (board.removedPlayerIndex >= 0) {
-                if (board.removedPlayerIndex <= i) {
+            int indexOfLostPlayer = checkIfLost();
+            if (indexOfLostPlayer != -1) {
+                removePlayer(indexOfLostPlayer);
+                if (indexOfLostPlayer <= i) {
                     --i;
                 }
-                board.removedPlayerIndex = -1;
             }
         }
+    }
+
+    private int checkIfLost() {
+        for (int i = 0; i < board.players.size(); i++) {
+            if (board.players.get(i).getLives() == 0) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private void removePlayer(int index) {
+        String playerName = board.players.get(index).getName();
+        IOmanager.println(playerName + " lost");
+        board.lostPlayers.add(playerName);
+        board.players.remove(index);
     }
 
     private void printRound(Player player) {
