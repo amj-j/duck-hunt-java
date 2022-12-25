@@ -32,6 +32,7 @@ public class Game {
         for (int i = 0; i < board.players.size(); i++) {
             Player player = board.players.get(i);
             printRound(player);
+            player.swapIfNecessary();
             player.turn();   
             int indexOfLostPlayer = checkIfLost();
             if (indexOfLostPlayer != -1) {

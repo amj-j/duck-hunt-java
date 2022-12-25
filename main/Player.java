@@ -47,7 +47,7 @@ public class Player {
                 break;
             }
             catch (NothingAimedException e) {
-                IOmanager.print("You can't play Shoot because nothing is aimed!");
+                IOmanager.println("You can't play Shoot because nothing is aimed!");
             }
         }
     }
@@ -55,19 +55,29 @@ public class Player {
     public void playCard(int cardNum)throws NothingAimedException {
         ActionCard card = hand[cardNum];
         card.play();
-        do {
-            card = hand[cardNum];
-            board.actionDeck.addToBottom(card);
-            card = (ActionCard)board.actionDeck.takeFromTop();
-            hand[cardNum] = card;
-        } while (mustSwitchCard());
+        board.actionDeck.addToBottom(card);
+        card = (ActionCard)board.actionDeck.takeFromTop();
+        hand[cardNum] = card;
     }
 
-    private boolean mustSwitchCard() {
+    public void swapIfNecessary() {
+        ActionCard card;
+        while (mustSwitchCard()) {
+            card = hand[Constants.CARDS_ON_HAND - 1];
+            board.actionDeck.addToBottom(card);
+            card = (ActionCard)board.actionDeck.takeFromTop();
+            hand[Constants.CARDS_ON_HAND - 1] = card;
+        }
+    }
+
+    public boolean mustSwitchCard() {
         for (ActionCard card : hand) {
             if (!(card instanceof Shoot)) {
                 return false;
             }
+        }
+        if (board.aimTiles.anyAimed()) {
+            return false;
         }
         return true;
     }
