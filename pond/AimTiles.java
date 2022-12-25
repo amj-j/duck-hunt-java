@@ -18,4 +18,13 @@ public class AimTiles {
     public void removeAim(int index) {
         tiles[index] = false;
     }
+
+    public boolean anyAimed() {
+        for (int i = 0; i < Constants.POND_SIZE; i++) {
+            if (isAimed(i)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

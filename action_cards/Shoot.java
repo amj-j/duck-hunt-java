@@ -4,6 +4,7 @@ import main.Board;
 import utils.IOmanager;
 import pond.pond_cards.PondCard;
 import pond.pond_cards.Duck;
+import exceptions.NothingAimedException;
 
 public class Shoot extends ActionCard {
 
@@ -12,9 +13,15 @@ public class Shoot extends ActionCard {
     }
 
     @Override
-    public void play() {
+    public void play() throws NothingAimedException {
         IOmanager.println("You chose Shoot");
-        int index = getPondIndex("What tile do you shoot at?");   
+
+        if (!board.aimTiles.anyAimed()) {
+            throw new NothingAimedException();
+        }
+
+        int index = getPondIndex("What tile do you shoot at?"); 
+
         if (board.aimTiles.isAimed(index)) {
             board.aimTiles.removeAim(index);
             PondCard card = board.pond.getCard(index);

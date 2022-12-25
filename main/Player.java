@@ -3,6 +3,8 @@ package main;
 import action_cards.ActionCard;
 import utils.Constants;
 import utils.IOmanager;
+import exceptions.NothingAimedException;
+import action_cards.Shoot;
 
 public class Player {
     private String name;
@@ -31,14 +33,43 @@ public class Player {
         hand[index] = card;
     }
 
-    public boolean playCard(int cardNum) {
+    public void turn() {
+        int cardNum;
+        while (true) {
+            cardNum = IOmanager.readIntInRange(
+                1, 
+                Constants.CARDS_ON_HAND+1, 
+                "Which card do you wish to play?", 
+                "Enter valid number"
+            ) - 1;
+            try {
+                playCard(cardNum);
+                break;
+            }
+            catch (NothingAimedException e) {
+                IOmanager.print("You can't play Shoot because nothing is aimed!");
+            }
+        }
+    }
+
+    public void playCard(int cardNum)throws NothingAimedException {
         ActionCard card = hand[cardNum];
         card.play();
-        board.actionDeck.addToBottom(card);
-        card = (ActionCard)board.actionDeck.takeFromTop();
-        hand[cardNum] = card;
-        return true;
+        do {
+            card = hand[cardNum];
+            board.actionDeck.addToBottom(card);
+            card = (ActionCard)board.actionDeck.takeFromTop();
+            hand[cardNum] = card;
+        } while (mustSwitchCard());
+    }
 
+    private boolean mustSwitchCard() {
+        for (ActionCard card : hand) {
+            if (!(card instanceof Shoot)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void printHand() {

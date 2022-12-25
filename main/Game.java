@@ -32,14 +32,7 @@ public class Game {
         for (int i = 0; i < board.players.size(); i++) {
             Player player = board.players.get(i);
             printRound(player);
-
-            int cardNum = IOmanager.readIntInRange(
-                1, 
-                Constants.CARDS_ON_HAND+1, 
-                "Which card do you wish to play?", 
-                "Enter valid number"
-            ) - 1;
-            player.playCard(cardNum);
+            player.turn();   
             int indexOfLostPlayer = checkIfLost();
             if (indexOfLostPlayer != -1) {
                 removePlayer(indexOfLostPlayer);
