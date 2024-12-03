@@ -2,7 +2,6 @@ package main;
 
 import java.util.ArrayList;
 
-import cards.*;
 import cards.action.ActionCard;
 import cards.action.Aim;
 import cards.action.DuckDance;
@@ -11,11 +10,14 @@ import cards.action.Scatter;
 import cards.action.Shoot;
 import cards.action.TurboDuck;
 import cards.action.WildBill;
+import pond.AimTiles;
+import pond.Pond;
+import pond.cards.Duck;
+import pond.cards.Water;
 import utils.IOmanager;
 import utils.Constants;
 
-import pond.*;
-import pond.cards.*;
+
 
 public class Board {
     public ArrayList<Player> players = new ArrayList<Player>();
