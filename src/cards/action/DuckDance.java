@@ -1,9 +1,9 @@
-package action_cards;
+package cards.action;
 
 import utils.Constants;
 import utils.IOmanager;
 import main.Board;
-import pond.pond_cards.PondCard;
+import pond.cards.PondCard;
 
 public class DuckDance extends ActionCard {
 

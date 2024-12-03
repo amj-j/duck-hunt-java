@@ -1,4 +1,4 @@
-package action_cards;
+package cards.action;
 
 import utils.IOmanager;
 import utils.Constants;

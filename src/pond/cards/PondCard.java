@@ -1,4 +1,4 @@
-package pond.pond_cards;
+package pond.cards;
 
 import main.Card;
 

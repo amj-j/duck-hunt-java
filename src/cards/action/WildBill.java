@@ -1,9 +1,9 @@
-package action_cards;
+package cards.action;
 
 import main.Board;
+import pond.cards.Duck;
+import pond.cards.PondCard;
 import utils.IOmanager;
-import pond.pond_cards.PondCard;
-import pond.pond_cards.Duck;
 
 public class WildBill extends ActionCard {
 

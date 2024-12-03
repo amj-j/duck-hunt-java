@@ -1,10 +1,10 @@
 package main;
 
-import action_cards.ActionCard;
 import utils.Constants;
 import utils.IOmanager;
+import cards.action.ActionCard;
+import cards.action.Shoot;
 import exceptions.NothingAimedException;
-import action_cards.Shoot;
 
 public class Player {
     private String name;

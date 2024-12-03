@@ -1,7 +1,7 @@
 package pond;
 
 import main.Deck;
-import pond.pond_cards.PondCard;
+import pond.cards.PondCard;
 
 public class Pond extends Deck{
 

@@ -1,9 +1,9 @@
-package action_cards;
+package cards.action;
 
 import utils.IOmanager;
 import main.Board;
-import pond.pond_cards.PondCard;
-import pond.pond_cards.Duck;
+import pond.cards.Duck;
+import pond.cards.PondCard;
 
 public class TurboDuck extends ActionCard {
 
