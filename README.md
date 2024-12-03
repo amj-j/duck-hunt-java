@@ -2,7 +2,7 @@
 A simplified version of the card game "Duck hunt" in the form of a console Java aplication.
 
 ## My motivation
-This is my first object-ortiented programming project, as well as my first time using git.
+This is my first object-ortiented programming project, as well as my first time using git. I coded this in December of 2022.
 
 This project is based on an assignment originally given in the "Object-Oriented Programming" course at my university.
 Although I had not yet taken the course at the time, I found the assignment on the course website and decided to complete it as a self-directed challenge.
