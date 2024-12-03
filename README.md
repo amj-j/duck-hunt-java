@@ -11,7 +11,7 @@ My goal was to deepen my understanding of Java and object-oriented programming p
 I also completed three other assignments from the same course (from previous years) as part of this initiative. 
 These projects can be found on my GitHub: [Monopoly lite](https://github.com/amj-j/monopoly-lite-java), [Reversi](https://github.com/amj-j/reversi-java), and [Rook in maze](https://github.com/amj-j/rook-in-maze-java).
 
-The [Gameplay](#original-assignment) section in this file is the original assignment.
+The **Gameplay** section in this file is the original assignment.
 
 ## Usage
 
@@ -24,7 +24,7 @@ You need to have Java 1.8 (also known as Java 8) or higher installed on you comp
 3. Type this command into the terminal to run the app: ```java -jar duck-hunt.jar```.
 4. The app will run in your terminal.
 
-## Gameplay {#original-assignment}
+## Gameplay
 
 ### Game introduction
 Ducks are swimming peacefully in a pond. They have no idea that there are hunters nearby, and the hunters won't stop shooting until all the ducks are dead. Each of the hunters must protect some of the ducks and their goald is to shoot all the ducks of the other hunters.
