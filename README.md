@@ -13,12 +13,10 @@ These projects can be found on my GitHub: [Monopoly lite](https://github.com/amj
 
 The **Gameplay** section in this file is the original assignment.
 
-## Usage
-
-### Prerequisites
+## Prerequisites
 You need to have Java 1.8 (also known as Java 8) or higher installed on you computer to run this app.
 
-### Installation
+## Installation
 1. Download the ```duck-hunt.jar``` file.
 2. Open your terminal and navigate to folder in which the downloaded ```duck-hunt.jar``` file is located.
 3. Type this command into the terminal to run the app: ```java -jar duck-hunt.jar```.
