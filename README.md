@@ -14,7 +14,7 @@ These projects can be found on my GitHub: [Monopoly lite](https://github.com/amj
 The **Gameplay** section in this file is the original assignment.
 
 ### Goal
-This assignment is aimed at practicing the basic principles of object-oriented programming.
+This assignment focuses on practicing the basic principles of object-oriented programming.
 
 ## Prerequisites
 You need to have Java 1.8 (also known as Java 8) or higher installed on you computer to run this app.
